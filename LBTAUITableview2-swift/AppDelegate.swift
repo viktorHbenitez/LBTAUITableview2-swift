@@ -15,7 +15,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        // Manually create a window fo the UITableView
+        window = UIWindow()
+        window?.makeKeyAndVisible()
+        
+        // add navigation bar to the tableView
+        let navController = UINavigationController(rootViewController: ViewController())
+        window?.rootViewController = navController
+
         return true
     }
 
