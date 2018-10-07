@@ -2,6 +2,45 @@
 
 # UITableView Contacts
 
+![imagen](../feature-HowToFavoriteCell/assets/sketch4.gif) 
+
+## 3. How to Favorite a Cell
+
+[LBTA ] (https://www.letsbuildthatapp.com/course_video?id=2262)
+
+### Steps
+
+1. Create a new custom cell `ContactCell.swift` an communicate with the TableView  
+1.1 Create a link father `ViewController.swift`  
+1.2 Set in `ViewController`  `cell.link = self` pass `ViewController to ViewCell`  
+1.3 Contact Cell send a `View Cell tapped`  
+1. 4 in `ViewController` recibe in `func someMethodIWantToCall(cell: UITableViewCell)` method the cell tapped and get the Contact model  
+```swift
+
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! ContactCell
+        cell.link = self
+        
+        let contact = twoDimensionalArray[indexPath.section].names[indexPath.row]
+        
+        cell.textLabel?.text = contact.name
+        cell.accessoryView?.tintColor = contact.hasFavorited ? UIColor.red : .lightGray
+        
+        if showIndexPaths {
+            cell.textLabel?.text = "\(contact.name)   Section:\(indexPath.section) Row:\(indexPath.row)"
+        }
+        
+        return cell
+        
+    }
+```
+
+
+=================   
+
+# UITableView Contacts
+
 ![imagen](../feature-ExpandableHeaderUITableView/assets/sketch3.gif) 
 
 ## 3. Expandable Header UITableView
