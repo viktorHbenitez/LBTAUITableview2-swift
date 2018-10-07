@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UITableViewController {
+class ViewController: UITableViewController, ContactCellDelegate {
 
     let cellId = "cellId123123"
    
@@ -136,7 +136,8 @@ class ViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! ContactCell
-        cell.link = self
+//        cell.link = self
+        cell.delegate = self
         
         let contact = twoDimensionalArray[indexPath.section].names[indexPath.row]
         

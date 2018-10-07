@@ -8,14 +8,17 @@
 
 import UIKit
 
+protocol ContactCellDelegate {
+    func someMethodIWantToCall(cell: UITableViewCell)
+    
+}
 class ContactCell: UITableViewCell {
     
-    var link: ViewController?
+//    var link: ViewController?
+    var delegate : ContactCellDelegate?
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-        //        backgroundColor = .red
         
         // kind of cheat and use a hack
         let starButton = UIButton(type: .system)
@@ -30,7 +33,8 @@ class ContactCell: UITableViewCell {
     
     @objc private func handleMarkAsFavorite() {
         //        print("Marking as favorite")
-        link?.someMethodIWantToCall(cell: self) // self pass the ContactCell class
+//        link?.someMethodIWantsToCall(cell: self) // self pass the ContactCell class
+        delegate?.someMethodIWantToCall(cell: self)
     }
     
     required init?(coder aDecoder: NSCoder) {
