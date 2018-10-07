@@ -13,6 +13,7 @@
 		E4067DDA21686878005D09D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4067DD921686878005D09D2 /* Assets.xcassets */; };
 		E4067DDD21686878005D09D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4067DDB21686878005D09D2 /* LaunchScreen.storyboard */; };
 		E4067DE521686BED005D09D2 /* workflow-walkthrough.md in Resources */ = {isa = PBXBuildFile; fileRef = E4067DE421686BEC005D09D2 /* workflow-walkthrough.md */; };
+		E4103B31216A9A00000EEFAC /* ExpandableNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4103B30216A9A00000EEFAC /* ExpandableNames.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		E4067DDC21686878005D09D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E4067DDE21686878005D09D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4067DE421686BEC005D09D2 /* workflow-walkthrough.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "workflow-walkthrough.md"; sourceTree = "<group>"; };
+		E4103B30216A9A00000EEFAC /* ExpandableNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableNames.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 			children = (
 				E4067DD221686877005D09D2 /* AppDelegate.swift */,
 				E4067DD421686877005D09D2 /* ViewController.swift */,
+				E4103B30216A9A00000EEFAC /* ExpandableNames.swift */,
 				E4067DD621686877005D09D2 /* Main.storyboard */,
 				E4067DD921686878005D09D2 /* Assets.xcassets */,
 				E4067DDB21686878005D09D2 /* LaunchScreen.storyboard */,
@@ -139,6 +142,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4103B31216A9A00000EEFAC /* ExpandableNames.swift in Sources */,
 				E4067DD521686877005D09D2 /* ViewController.swift in Sources */,
 				E4067DD321686877005D09D2 /* AppDelegate.swift in Sources */,
 			);

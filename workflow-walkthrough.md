@@ -1,4 +1,77 @@
 
+
+# UITableView Contacts
+
+![imagen](../feature-AnimationRowsInUITableView/assets/sketch2.gif) 
+
+## 3. Expandable Header UITableView
+
+[LBTA ] (https://www.letsbuildthatapp.com/course_video?id=2242)
+
+
+### Steps
+
+1. Create a Model  `ExpandableNames.swift`  and change de elements with the atribut  `isExpanded`   
+2.  Create a button in the header tableView `button.tag = section` important to now what section is tapped  
+2.1 `isExpanded` to delete or insert elements in the TableView  
+3. In `tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int` change the elements to show 
+
+```swift
+override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+
+        // Add button and change the header height in heightForHeaderInSection method
+        let button = UIButton(type: .system)
+        button.setTitle("Close", for: .normal)
+        button.setTitleColor(.black, for: .normal)
+        button.backgroundColor = .yellow
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
+        
+        button.addTarget(self, action: #selector(handleExpandClose), for: .touchUpInside)
+        button.tag = section  // important to know what button is tapped
+        
+        return button
+    }
+    
+    @objc func handleExpandClose(button: UIButton) {
+        print("Trying to expand and close section...")
+        
+        let section = button.tag
+        
+        // we'll try to close the section first by deleting the rows
+        var indexPaths = [IndexPath]()
+        for row in twoDimensionalArray[section].names.indices {
+            print(0, row)
+            let indexPath = IndexPath(row: row, section: section)
+            indexPaths.append(indexPath)
+        }
+        
+        // Revert the isExpanded value
+        let isExpanded = twoDimensionalArray[section].isExpanded
+        twoDimensionalArray[section].isExpanded = !isExpanded
+        
+        button.setTitle(isExpanded ? "Open" : "Close", for: .normal)
+        
+        if isExpanded {
+            tableView.deleteRows(at: indexPaths, with: .fade)  // show the exact number in the row in section
+        } else {
+            tableView.insertRows(at: indexPaths, with: .fade)
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if !twoDimensionalArray[section].isExpanded {
+            return 0
+        }
+        
+        return twoDimensionalArray[section].names.count
+
+    }
+
+```
+**Show the text when the animation is presented**  
+
+1.  In `override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)` use the `showIndexPaths` bool value to show de description  
+
 # UITableView Contacts
 
 ![imagen](../feature-AnimationRowsInUITableView/assets/sketch2.gif) 
