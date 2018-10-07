@@ -2,7 +2,7 @@
 
 # UITableView Contacts
 
-![imagen](../feature-AnimationRowsInUITableView/assets/sketch3.gif) 
+![imagen](../feature-ExpandableHeaderUITableView/assets/sketch3.gif) 
 
 ## 3. Expandable Header UITableView
 
